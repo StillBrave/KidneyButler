@@ -3569,7 +3569,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
               }).then(function (res) {
                 if (res) {
                   counseltype
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             } else {
@@ -3581,7 +3581,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
               }).then(function (res) {
                 if (res) {
                   counseltype
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             }
@@ -3595,7 +3595,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
               }).then(function (res) {
                 if (res) {
                   counseltype
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             } else {
@@ -3607,7 +3607,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
               }).then(function (res) {
                 if (res) {
                   counseltype
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             }
@@ -3621,7 +3621,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
               }).then(function (res) {
                 if (res) {
                   counseltype
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             } else {
@@ -3633,7 +3633,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
               }).then(function (res) {
                 if (res) {
                   counseltype
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             }
@@ -6365,6 +6365,16 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
       console.log(err)
     }
         )
+    News.getNews({userId: receiver, type: 6}).then(
+            function (data) {
+              if (data.results.length) {
+                console.log(data.results)
+                $scope.refund = data.results[0]
+              }
+            }, function (err) {
+      console.log(err)
+    }
+        )
 
         News.getNews({userId: receiver, type: 7}).then(
             function (data) {
@@ -6449,7 +6459,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
                 cancelText: '取消'
               }).then(function (res) {
                 if (res) {
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             } else {
@@ -6460,7 +6470,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
                 cancelText: '取消'
               }).then(function (res) {
                 if (res) {
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             }
@@ -6473,7 +6483,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
                 cancelText: '取消'
               }).then(function (res) {
                 if (res) {
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             } else {
@@ -6484,7 +6494,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
                 cancelText: '取消'
               }).then(function (res) {
                 if (res) {
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             }
@@ -6497,7 +6507,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
                 cancelText: '取消'
               }).then(function (res) {
                 if (res) {
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             } else {
@@ -6508,7 +6518,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
                 cancelText: '取消'
               }).then(function (res) {
                 if (res) {
-                  $state.go('tab.consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
+                  $state.go('consult-chat', {chatId: doctorId}) // 虽然传了type和status但不打算使用 byZYH 删了 byPXY
                 }
               })
             }
@@ -7751,7 +7761,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
          */
         ionicLoadinghide()
         Wechat.sendPaymentRequest(params, function (data) {
-          alert('wechat:'+JSON.stringify(data))
+          // alert('wechat:'+JSON.stringify(data))
           // $q.all([
           // /**
           //  * [给医生账户‘转账’]
@@ -7771,7 +7781,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
              * @param {doctorId:String,chargeDuration:Number}   注：chargeDuration指购买服务月份
              */
             Patient.ApplyDocInCharge({doctorId:doctorId,chargeDuration:duration}).then(function(data){
-              alert('apply:'+JSON.stringify(data))
+              // alert('apply:'+JSON.stringify(data))
               $ionicPopup.alert({
                 template: '主管医生服务申请已提交，请耐心等待审核！若医生拒绝了你的申请，预付金额将退还到你的账号。',
                 okText: '好的'
@@ -8274,6 +8284,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
   $scope.openPersonal = true
   $scope.openDiag = true
   var patientId = Storage.get('UID')
+  // console.log($stateParams)
   var DoctorId = $stateParams.DoctorId
   var counselType = $stateParams.counselType
   $scope.submitable = false
@@ -8800,7 +8811,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
     Counsels.questionaire(temp).then(
           function (data) {
             console.log(data)
-            alert('questionaire'+JSON.stringify(data))
+            // alert('questionaire'+JSON.stringify(data))
             if (data.result == '新建成功') {
               // 不能重复提交
               $scope.submitable = true
@@ -8839,11 +8850,13 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
                 // $scope.$on('im:messageRes',function(event,messageRes){
                     // socket.off('messageRes');
                     // socket.emit('disconnect');
-              if($stateParams.counseltype==1||$stateParams.counseltype==6||$stateParams.counseltype==7){
+              // console.log(counselType)
+              // alert('counselType'+counselType)
+              if(counselType==1||counselType==6||counselType==7){
                 Account.modifyCounts({patientId: Storage.get('UID'), doctorId: DoctorId, modify: 3}).then(function(data){
-
+                  // alert('modifyCounts'+JSON.stringify(data))
                 },function(err){
-
+                  // alert('modifyError'+JSON.stringify(err))
                 })
               }
               if (DoctorId == 'U201612291283') {
@@ -8884,14 +8897,14 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
                             // socket.emit('newUser',{user_name:'陈江华'.name,user_id:DoctorId});
                           socket.emit('message', {msg: msgTeam, to: '10050278', role: 'patient'})
                           setTimeout(function () {
-                            $state.go('tab.consult-chat', {chatId: DoctorId})
+                            $state.go('consult-chat', {chatId: DoctorId})
                           }, 500)
                         }, function (er) {
                           console.error(err)
                         })
               } else {
                 setTimeout(function () {
-                  $state.go('tab.consult-chat', {chatId: DoctorId})
+                  $state.go('consult-chat', {chatId: DoctorId})
                 }, 500)
               }
                 // });
@@ -9240,10 +9253,13 @@ $scope.initial={
     // ----------------结束搜索患者------------------
 }])
 
-.controller('postCtrl', ['$scope', '$state', 'Storage', '$ionicHistory', '$ionicPopover', 'Forum', 'Camera', 'CONFIG' , '$ionicLoading', '$timeout',function ($scope, $state, Storage, $ionicHistory, $ionicPopover, Forum, Camera, CONFIG, $ionicLoading, $timeout) {
+.controller('postCtrl', ['$scope', '$state', 'Storage', '$ionicHistory', '$ionicPopover', 'Forum', 'Camera', 'CONFIG' , '$ionicLoading', '$timeout', '$ionicModal','$ionicScrollDelegate', function ($scope, $state, Storage, $ionicHistory, $ionicPopover, Forum, Camera, CONFIG, $ionicLoading, $timeout, $ionicModal, $ionicScrollDelegate) {
   $scope.GoBack = function () {
     $state.go('tab.forum')
   }
+  $scope.$on('$ionicView.enter', function () {
+    imgModalInit();
+  })
   $scope.hasDeliver = true
   $scope.postphoto = '';
   $scope.post = {
@@ -9257,6 +9273,7 @@ $scope.initial={
     anonymous:''
     // imgurl:[]
   }
+  $scope.Images=[]
   $scope.Post = function () {
     var param = {
       token: Storage.get('TOKEN'),
@@ -9404,6 +9421,73 @@ $scope.initial={
   //   $scope.modal.show()
   // }
 
+    
+  function imgModalInit () {
+    $scope.zoomMin = 1;
+    $scope.imageUrl = '';
+    $scope.imageIndex = -1;//当前展示的图片
+    $ionicModal.fromTemplateUrl('partials/tabs/consult/msg/imageViewer.html', {
+        scope: $scope
+    }).then(function(modal) {
+        $scope.modal = modal;
+        // $scope.modal.show();
+        $scope.imageHandle = $ionicScrollDelegate.$getByHandle('imgScrollHandle');
+    }); 
+  }
+
+  $scope.showoriginal=function(resizedpath){
+        // $scope.openModal();
+        for (i = 0; i < $scope.post.content[1].image.length; i++) {
+              $scope.Images[i] = CONFIG.imgLargeUrl+$scope.post.content[1].image[i].slice($scope.post.content[1].image[i].lastIndexOf('/')+1).substr(7)
+              // console.log('Images',$scope.Images)
+              // console.log('images',$scope.image)
+        }
+        console.log(resizedpath)
+        $scope.imageIndex = 0;
+        //console.log($scope.imageIndex)
+        var originalfilepath=CONFIG.imgLargeUrl+resizedpath.slice(resizedpath.lastIndexOf('/')+1).substr(7)
+        //console.log(originalfilepath)
+        // $scope.doctorimgurl=originalfilepath;
+        $scope.imageHandle.zoomTo(1, true);
+        $scope.imageUrl = originalfilepath;
+        $scope.modal.show();
+    }
+  //关掉图片
+  $scope.closeModal = function() {
+      $scope.imageHandle.zoomTo(1, true);
+      $scope.modal.hide();
+      // $scope.modal.remove()
+  };
+  //双击调整缩放
+  $scope.switchZoomLevel = function() {
+      if ($scope.imageHandle.getScrollPosition().zoom != $scope.zoomMin)
+          $scope.imageHandle.zoomTo(1, true);
+      else {
+          $scope.imageHandle.zoomTo(5, true);
+      }
+  }
+  //右划图片
+  $scope.onSwipeRight = function () {
+    if ($scope.imageIndex <= $scope.Images.length - 1 && $scope.imageIndex > 0)
+      $scope.imageIndex = $scope.imageIndex - 1;
+    else {
+      //如果图片已经是第一张图片了，则取index = Images.length-1
+      $scope.imageIndex = $scope.Images.length - 1;
+    }
+    $scope.imageUrl = $scope.Images[$scope.imageIndex];
+  }
+
+  //左划图片
+  $scope.onSwipeLeft = function () {
+    if ($scope.imageIndex < $scope.Images.length - 1 && $scope.imageIndex >= 0)
+      $scope.imageIndex = $scope.imageIndex + 1;
+    else {
+      //如果图片已经是最后一张图片了，则取index = 0
+      $scope.imageIndex = 0;
+    }
+    //替换url，展示图片
+    $scope.imageUrl = $scope.Images[$scope.imageIndex];
+  }
 
   $scope.deleteimg = function (index) {
     // somearray.removeByValue("tue");
