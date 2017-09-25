@@ -1806,10 +1806,15 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
                 str2=str1.split(":")[1]
                 str3=str2.split("}")[0]
                 $scope.newMes= "最新消息：医生"+str3+"给您发来一条聊天消息“"+data.results[0].description+"”"
-                console.log($scope.newMes)
-              } else {
-                  $scope.newMes= "最新消息："+ data.results[0].description
-              }             
+                
+            } else {
+                $scope.newMes= "最新消息："+ data.results[0].description
+            } 
+            if($scope.newMes.length>=80){
+              $scope.newMes = $scope.newMes.slice(0,79)+ "..."
+            } 
+
+              // console.log($scope.newMes.length)    
         } else {
           $scope.HasUnreadMessages = false
           $scope.newMes= "最新消息：没有最新的未读消息！"
@@ -4631,7 +4636,7 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
 }])
 
 // 健康信息--PXY
-.controller('HealthInfoCtrl', ['$ionicLoading', '$scope', '$timeout', '$state', '$ionicHistory', '$ionicPopup', 'Storage', 'Health', 'Dict','$ionicPopover', 'CONFIG','$ionicModal','$ionicScrollDelegate',function ($ionicLoading, $scope, $timeout, $state, $ionicHistory, $ionicPopup, Storage, Health, Dict,$ionicPopover,CONFIG,$ionicModal,$ionicScrollDelegate) {
+.controller('HealthInfoCtrl', ['$ionicActionSheet', '$ionicLoading', '$scope', '$timeout', '$state', '$ionicHistory', '$ionicPopup', 'Storage', 'Health', 'Dict','$ionicPopover', 'CONFIG','$ionicModal','$ionicScrollDelegate',function ($ionicActionSheet, $ionicLoading, $scope, $timeout, $state, $ionicHistory, $ionicPopup, Storage, Health, Dict,$ionicPopover,CONFIG,$ionicModal,$ionicScrollDelegate) {
   var patientId = Storage.get('UID')
 
   $scope.Goback = function () {
@@ -4797,7 +4802,26 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
     $scope.popover = popover;
   });
 
-
+  $scope.addHealth = function ($event) {
+    $ionicActionSheet.show({
+     buttons: [
+       { text: '新建' },
+       { text: '选择' }
+     ],
+     cancelOnStateChange: true,
+     titleText: '上传',
+     buttonClicked: function(index) {
+      if(index===0){
+        $scope.urineUpload()
+      }else{
+        $scope.newHealth()
+      }
+       // return true;
+     }
+   })
+    // $scope.openPopover($event)
+  }
+  // 选择个人信息的点击事件----------------------------
   $scope.openPopover = function($event) {
     $scope.popover.show($event);
   };
