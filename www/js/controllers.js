@@ -8244,8 +8244,15 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
 
   var doctorSchedual = function(){
     Service.docSchedual({doctorId:$scope.doctor.userId}).then(function(data){
-      // console.log(data.results)
-      var schedules = data.results.concat()
+      const docOffWork1 = 12,docOffWork2 =17
+      var schedules = data.results.concat(), mornToCompare = new Date().setHours(docOffWork1,0,0),afterToCompare = new Date().setHours(docOffWork2,0,0),now = new Date()
+      // if(now >=afterToCompare){
+      // 	schedules[0].margin = -1
+      // 	schedules[1].margin =-1
+      // }else if(now>= mornToCompare){
+      // 	schedules[0].margin =-1
+      // }
+      now>=mornToCompare? schedules[0].margin=-1 : now>=afterToCompare ? schedules[0].margin = schedules[1].margin=-1: null
        // console.log(schedules)
       $scope.periods = schedules.splice(0,14)
       $scope.nextDays = schedules
@@ -9645,16 +9652,23 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
                     console.log(con)
                       // socket.emit('newUser',{user_name:'陈江华'.name,user_id:DoctorId});
                     socket.emit('message', {msg: msgTeam, to: '10050278', role: 'patient'})
-                    setTimeout(function () {
-                      $state.go('consult-chat', {chatId: DoctorId})
-                    }, 500)
+                    $ionicLoading.show({ template: '发送中'})
+        setTimeout(function () {
+          $ionicLoading.hide()
+          $state.go('consult-chat', {chatId: DoctorId})
+        }, 2000)
+                    // setTimeout(function () {
+                    //   $state.go('consult-chat', {chatId: DoctorId})
+                    // }, 500)
                   }, function (er) {
                     console.error(err)
                   })
         } else {
-          setTimeout(function () {
-            $state.go('consult-chat', {chatId: DoctorId})
-          }, 500)
+          $ionicLoading.show({ template: '发送中'})
+        setTimeout(function () {
+          $ionicLoading.hide()
+          $state.go('consult-chat', {chatId: DoctorId})
+        }, 2000)
         }
     },
     function (err) {
